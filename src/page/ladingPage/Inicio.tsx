@@ -1,7 +1,7 @@
 
 import { FaComputer } from "react-icons/fa6";
-import Card from "../../components/ladingPage/Card";
-import { FaServer } from "react-icons/fa";
+// import Card from "../../components/ladingPage/Card";
+// import { FaServer } from "react-icons/fa";
 import { CgCalendarDates } from "react-icons/cg";
 import { IoIosInformationCircle } from "react-icons/io";
 import CardsGeneral from "../../components/ladingPage/CardsGeneral";
