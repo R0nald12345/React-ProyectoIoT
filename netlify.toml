@@ -1,9 +1,9 @@
 [build]
   command = "npm run build"
-  publish = "build"
+  publish = "dist"  # Cambia a "dist" porque usas Vite
 
 [context.production]
-  environment = { NODE_VERSION = "18.0.0" }
+  environment = { NODE_VERSION = "20.11.1" }  # Actualiza a una versión más reciente
 
 [context.deploy-preview]
   command = "npm run build"
