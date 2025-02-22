@@ -1,10 +1,12 @@
+// import MainPage from "./page/ladingPage/MainPage"
 
+import AppRouter from "./router/router"
 
 function App() {
 
   return (
     <>
-      <h1 className="text-3xl bg-red-300 font-black">Hola Mundo</h1>
+      <AppRouter/>
     </>
   )
 }
