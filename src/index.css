@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 
-@keyframes show{
+/* @keyframes show{
 
     from{
       opacity:0;
@@ -36,4 +36,30 @@ img{
     animation-fill-mode: both;
     animation-timeline: --reveal;
     animation-range: entry 25% cover 50%;
+  } */
+
+  :root{
+    --primary-orange: #FF6D00;
   }
+
+  .bg-custom-orange{
+    background-color: var(--primary-orange);
+  }
+
+  .text-custom-orange{
+    color: var(--primary-orange);
+  }
+
+  :root{
+    --primary-blue: #0A2540 ;
+  }
+
+  .bg-custom-blue{
+    background-color: var(--primary-blue);
+  }
+  
+  .text-custom-blue{
+    color: var(--primary-blue);
+  }
+
+  

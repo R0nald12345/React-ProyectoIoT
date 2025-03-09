@@ -13,9 +13,9 @@ const DashboardHeader = () => {
 
         <Menu
           menuButton={
-            <MenuButton className="relative hover:bg-secondary-100 p-2 rounded-lg transition-colors">
+            <MenuButton className="relative  p-2 rounded-lg transition-colors">
               <IoNotifications />
-              <span className="absolute -top-0.5 right-0 bg-primary py-0.5 px-[5px] box-content text-black rounded-full text-[8px] font-bold">
+              <span className="absolute -top-0.5 right-0  py-0.5 px-[5px] box-content bg-red-700 text-white rounded-full text-[8px] font-bold">
                 2
               </span>
             </MenuButton>
@@ -23,7 +23,7 @@ const DashboardHeader = () => {
           arrow={true}
           align="end"
           transition
-          menuClassName={"bg-secondary-100 p-4"}
+          menuClassName={"bg-white rounded-xl p-4"}
         >
           <h1 className="text-gray-900 text-center font-medium">
             Notificaciones (3)

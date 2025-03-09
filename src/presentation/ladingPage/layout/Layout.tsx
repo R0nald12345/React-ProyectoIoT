@@ -1,12 +1,12 @@
 import { Outlet } from 'react-router-dom'
-import Header from '../components/ladingPage/Header'
+import Header from '../components/Header'
 
 const Layout = () => {
   return (
     <>
         <Header/>
 
-        <main className=''>
+        <main className='mt-22'>
             <Outlet/>
         </main>
 

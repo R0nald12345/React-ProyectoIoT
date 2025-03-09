@@ -4,70 +4,70 @@ import DispositivoPage from "../pages/Dispositivos/DispositivoPage";
 
 export const menuItem = [
     {
-        to: "/inicio",
+        to: "inicio",
         icon:   "fa-solid",
         title: "Panel Principal",
         description: "Datos generales",
         component: <PanelPrincipalPage/>
     },
     {
-        to: "/dispositivos",
+        to: "dispositivos",
         icon:   "fa-solid",
         title: "Dispositivos",
         description: "Lista termostatos conectados",
         component: <DispositivoPage />
     },
     {
-        to: "/estadisticas",
+        to: "estadisticas",
         icon:   "fa-solid",
         title: "Estadísticas",
         description: " Gráficos de temperatura",
         component: <MdDashboard />
     },
     {
-        to: "/progrmacion",
+        to: "progrmacion",
         icon:   "fa-solid",
         title: "Programación",
         description: "Configuraciónes",
         component: <MdDashboard />
     },
     {
-        to: "/alertas",
+        to: "alertas",
         icon:   "fa-solid",
         title: "Alertas",
         description: "Historial de Notificaciones",
         component: <MdDashboard />
     },
     {
-        to: "/programacion",
+        to: "programacion",
         icon:   "fa-solid",
         title: "Programación ",
         description: "Configuraciónes Temperatura",
         component: <MdDashboard />
     },
     {
-        to: "/informes",
+        to: "informes",
         icon:   "fa-solid",
         title: "Informes",
         description: "Reportes Históricos",
         component: <MdDashboard />
     },
     {
-        to: "/configuraciones",
+        to: "configuraciones",
         icon:   "fa-solid",
         title: "Configuraciones",
         description: "Ajutes General",
         component: <MdDashboard />
     },
     {
-        to: "/usuarios",
+        to: "usuarios",
         icon:   "fa-solid",
         title: "Usuarios",
         description: "Gestión de Accesos",
         component: <MdDashboard />
     },
     {
-        to: "/soporte",
+        to: "soporte",
         icon:   "fa-solid",
         title: "Soporte",
         description: "Gestión de Contactos",
