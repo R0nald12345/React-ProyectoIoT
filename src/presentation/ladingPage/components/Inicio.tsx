@@ -1,20 +1,26 @@
-import { FaComputer } from "react-icons/fa6";
-import { CgCalendarDates } from "react-icons/cg";
-import { IoIosInformationCircle } from "react-icons/io";
-import CardsGeneral from "../../../components/ladingPage/CardsGeneral";
-import { Contacto } from "../../../page";
+
 import Contact from "./ComponentContact.tsx/Contact";
 import ComponentSolution from "./ComponentSolution/ComponentSolution";
 import ComponentBenefit from "./ComponentBenefit.tsx/ComponentBenefit";
 import ComponentService from "./ComponentServices/ComponentService";
+import imagenioT from '../../../../public/imagenIoT.png'
 
 const Inicio = () => {
   return (
     <div className="">
       {/* Sección principal */}
-      <section className='bg-[#0A2540] py-48 flex justify-center items-center'>
-        <section className="flex w-[90%] gap-16">
-          <div className="w-[50%] p-5" >
+
+      <div className="relative w-full h-[90vh] flex justify-center items-center overflow-hidden">
+        {/* Imagen de fondo difuminada */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-[url('https://logisber.com/contenido/subidas/2025/01/el-impacto-del-internet-de-las-cosas-iot-en-la-gestion-de-la-cadena-de-suministro.jpg')] bg-center bg-cover bg-no-repeat filter blur-lg scale-110"></div>
+          <div className="absolute inset-0 bg-black/40"></div> {/* Overlay oscuro */}
+        </div>
+
+        <section className="relative z-10 w-[90%] flex gap-16">
+
+
+          <div className="w-[50%] p-5 my-auto" >
             <p className="text-custom-orange text-xl uppercase">Innovación Tecnológica</p>
             <h1 className="text-center pt-3 text-6xl font-bold text-white">Transformamos su Industria con IA e ioT</h1>
             <p className="text-gray-400 text-xl mt-8 text-center">Optimizamos sus operaciones mediante solcuiones inteligentes que integran IA con sistemas IoT, maximiazando las eficianeica y reduciendo costos.</p>
@@ -39,16 +45,19 @@ const Inicio = () => {
             </section>
           </div>
 
-          <div className="w-[50%] bg-yellow-600">
-            <img className='bg-[url("https://logisber.com/contenido/subidas/2025/01/el-impacto-del-internet-de-las-cosas-iot-en-la-gestion-de-la-cadena-de-suministro.jpg")] bg-center bg-cover w-full object-cover h-[100%]'/>
+          <div className=" w-[50%] flex items-center justify-center ">
+            <img 
+              src={imagenioT}
+              className=' w-full my-auto'/>
           </div>
-        </section>        
-      </section>
 
-      <div>
+        </section>        
 
       </div>
 
+
+      {/* Contenido sobre el fondo */}
+       
 
       <div>
         <ComponentBenefit/>

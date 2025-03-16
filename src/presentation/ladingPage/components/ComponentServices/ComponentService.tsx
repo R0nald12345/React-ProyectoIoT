@@ -28,7 +28,7 @@ const ComponentService = () => {
                                     Ahorre hasta un 30% en costos operativos."
                         bgColor="bg-blue-700/20"
                         colorTitle="text-white"
-                        colorSubTitle="text-gray-500"
+                        colorSubTitle="text-gray-200"
                         
                     />
                     <CardBenefit
@@ -38,7 +38,7 @@ const ComponentService = () => {
                                     Ahorre hasta un 30% en costos operativos."
                         bgColor="bg-blue-700/20"
                         colorTitle="text-white"
-                        colorSubTitle="text-gray-500"
+                        colorSubTitle="text-gray-200"
                     />
                     <CardBenefit
                         icono={<TbAntennaBars5  className="text-white bg-blue-900 text-6xl rounded-md p-2" />}
@@ -47,7 +47,7 @@ const ComponentService = () => {
                                     Ahorre hasta un 30% en costos operativos."
                         bgColor="bg-blue-700/20"
                         colorTitle="text-white"
-                        colorSubTitle="text-gray-500"
+                        colorSubTitle="text-gray-200"
                     />
                     <CardBenefit
                         icono={<BsFillRocketTakeoffFill  className="text-white bg-blue-900 text-6xl rounded-md p-2" />}
@@ -56,7 +56,7 @@ const ComponentService = () => {
                                     Ahorre hasta un 30% en costos operativos."
                         bgColor="bg-blue-700/20"
                         colorTitle="text-white"
-                        colorSubTitle="text-gray-500"
+                        colorSubTitle="text-gray-200"
                     />
                 </section>
     

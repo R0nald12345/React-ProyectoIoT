@@ -74,7 +74,7 @@ const BarraEstadistico: React.FC = () => {
   return (
     <div className="bg-white/80 text-black p-4 shadow-md rounded-xl w-full h-full">
       <h2 className="text-lg font-bold mb-2">Gráfico de Barras</h2>
-      <div className="w-full h-[280px] bg-yellow-800">
+      <div className="w-full h-[280px]">
         <Bar data={data}  options={{
             ...options,
             maintainAspectRatio: false, // Importante
