@@ -57,9 +57,9 @@ const options = {
 
 const GraficoEstadistico: React.FC = () => {
   return (
-    <div className="bg-white/80 text-black p-4 shadow-md rounded-xl ">
+    <div className="bg-white/80 text-black p-4 border-gray-600 shadow-2xl rounded ">
       <h2 className="text-lg font-bold mb-2">Gráfico de Ventas</h2>
-      <div className="w-full h-[200px]">
+      <div className="w-full h-[255px]">
         <Line data={data} options={{
             ...options,
             maintainAspectRatio: false, // Importante

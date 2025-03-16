@@ -40,8 +40,8 @@ const SidebarMenuItem = ({to,icon,title,description}:Props) => {
       // }
     >
       <div className='flex flex-col p-3'>
-        <span className={`${icon} text-2xl mr-4 font-semibold text-white`}>{title} </span>
-        <span className='text-white'>{description} </span>
+        <span className={`${icon} text-2xl mr-4 font-semibold `}>{title} </span>
+        <span className=''>{description} </span>
       </div>
       
     </a>

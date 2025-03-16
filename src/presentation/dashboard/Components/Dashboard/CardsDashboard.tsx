@@ -10,7 +10,7 @@ const CardsDashboard = ({ title1, numberTitle1, title2, numberTitle2, icono }: P
   console.log("Props recibidos en CardsDashboard:", { title1, numberTitle1, title2, numberTitle2, icono });
 
   return (
-    <section className="flex bg-white/85 text-black py-5 px-8 w-full rounded-md">
+    <section className="flex bg-white/85 text-black py-5 px-8 w-full rounded-md border-gray-600 shadow-2xl">
 
       <section className="w-[60%]">
         
@@ -27,7 +27,7 @@ const CardsDashboard = ({ title1, numberTitle1, title2, numberTitle2, icono }: P
       </section>
 
       <div className="w-[40%] flex justify-center items-center">
-        <img src={icono} alt="Icono" className="w-24 h-24 object-contain"/>
+        <img src={icono} alt="Icono" className="w-24 h-24 object-contain" style={{ filter: 'invert(30%) sepia(100%) saturate(300%) hue-rotate(180deg)' }} />
       </div>
 
 

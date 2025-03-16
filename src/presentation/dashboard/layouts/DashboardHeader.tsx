@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const DashboardHeader = () => {
   return (
     <header className='h-[7vh] md:h-[10vh] 
-        border-b bg-gray-300 border-gray-600 border-2 p-8 flex items-center justify-end '>
+        border-b bg-gray-300 border-gray-200 border-2 p-8 flex items-center justify-end '>
 
         <Menu
           menuButton={

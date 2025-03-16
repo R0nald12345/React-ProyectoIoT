@@ -61,9 +61,9 @@ const CircularEstadistico: React.FC = () => {
   }, []);
 
   return (
-    <div className=" w-full h-[280px] p-4 rounded-xl bg-white/80">
+    <div className=" w-full h-[450px] p-4 rounded-md border-gray-600 shadow-2xl bg-white/80">
       <h2 className="text-lg font-bold mb-2 text-black">Gráfico de Barras</h2>
-      <div className='flex justify-center w-full md:h-[200px] '>
+      <div className='flex justify-center w-full md:h-[380px] '>
         <canvas ref={chartRef} style={{width:'100%', height:'100%'}}></canvas>
 
       </div>

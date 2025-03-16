@@ -10,9 +10,9 @@ const PanelPrincipalPage = () => {
 
   return (
     <div className="text-white">
-      <p className='text-3xl font-semibold'>Dashboard</p>
+      <p className='text-3xl font-semibold text-black'>Dashboard</p>
     {/* Superior */}
-      <section className='flex gap-5'>
+      <section className='flex gap-5 mt-5'>
 
         <section className='w-[60%]'>
 
@@ -22,14 +22,14 @@ const PanelPrincipalPage = () => {
               numberTitle1={27}
               title2="Power Consumition"
               numberTitle2={270}
-              icono="/Ventilador.png"
+              icono="/ventilador.svg"
             />
             <CardsDashboard
               title1="Fans"
               numberTitle1={27}
               title2="Power Consumition"
               numberTitle2={270}
-              icono="/Ventilador.png"
+              icono="/ventilador.svg"
             />
 
           </div>
@@ -40,14 +40,14 @@ const PanelPrincipalPage = () => {
               numberTitle1={27}
               title2="Power Consumition"
               numberTitle2={270}
-              icono="/Ventilador.png"
+              icono="/ventilador.svg"
             />
             <CardsDashboard
               title1="Fans"
               numberTitle1={27}
               title2="Power Consumition"
               numberTitle2={270}
-              icono="/Ventilador.png"
+              icono="/ventilador.svg"
             />
 
 
@@ -57,7 +57,8 @@ const PanelPrincipalPage = () => {
         </section>
 
         <div className='w-[40%]'>
-          <GraficoEstadistico/>
+          <GraficoEstadistico
+          />
         </div>
         
         
