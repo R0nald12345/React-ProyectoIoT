@@ -1,9 +1,9 @@
 
-import Contact from "./ComponentContact.tsx/Contact";
-import ComponentSolution from "./ComponentSolution/ComponentSolution";
-import ComponentBenefit from "./ComponentBenefit.tsx/ComponentBenefit";
-import ComponentService from "./ComponentServices/ComponentService";
-import imagenioT from '../../../../public/imagenIoT.png'
+import Contacto from "../../../module/ladingPage/components/ComponentContact/Contacto";
+import ComponentSolution from "../../../module/ladingPage/components/ComponentSolution/ComponentSolution";
+import ComponentBenefit from "../../../module/ladingPage/components/ComponentBenefit/ComponentBenefit";
+import ComponentService from "../../../module/ladingPage/components/ComponentServices/ComponentService";
+import imagenioT from '../../../img/imagenIoT.png'
 
 const Inicio = () => {
   return (
@@ -73,7 +73,7 @@ const Inicio = () => {
 
       {/* Sección de contacto con margen superior claro */}
       <div className="">
-        <Contact />
+        <Contacto />
       </div>
     </div>
   );

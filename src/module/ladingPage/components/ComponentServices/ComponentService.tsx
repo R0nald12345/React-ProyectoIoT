@@ -2,7 +2,7 @@ import { MdElectricBolt } from "react-icons/md";
 import { IoHardwareChipSharp } from "react-icons/io5";
 import { TbAntennaBars5 } from "react-icons/tb";
 import { BsFillRocketTakeoffFill } from "react-icons/bs";
-import CardBenefit from "../ComponentBenefit.tsx/CardBenefit";
+import CardBenefit from "../ComponentBenefit/CardBenefit";
 
 const ComponentService = () => {
     return (

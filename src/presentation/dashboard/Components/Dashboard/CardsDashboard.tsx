@@ -6,6 +6,7 @@ interface Props{
     numberTitle2: number;
     icono:string;
 }
+
 const CardsDashboard = ({ title1, numberTitle1, title2, numberTitle2, icono }: Props) => {
   console.log("Props recibidos en CardsDashboard:", { title1, numberTitle1, title2, numberTitle2, icono });
 

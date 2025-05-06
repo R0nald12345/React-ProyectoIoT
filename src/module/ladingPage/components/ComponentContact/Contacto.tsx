@@ -1,4 +1,4 @@
-const Contact = () => {
+const Contacto = () => {
   return (
     <section className="bg-blue-950 py-20">
 
@@ -46,4 +46,4 @@ const Contact = () => {
   )
 }
 
-export default Contact
+export default Contacto

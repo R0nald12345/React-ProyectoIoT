@@ -1,15 +1,16 @@
-// import MainPage from "./page/ladingPage/MainPage"
 
-import DashboardLayout from "./presentation/dashboard/layouts/DashboardLayout"
-import AppRouter from "./router/router"
+import IndexRoutes from "./routes"
 
 function App() {
 
   return (
     <>
-      <AppRouter/>
 
-      {/* <DashboardLayout/> */}
+
+      <IndexRoutes/>
+
+      
+
     </>
   )
 }
