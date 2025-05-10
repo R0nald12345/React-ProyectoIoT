@@ -33,11 +33,10 @@ const VistaEdificios = () => {
         setFiltro(e.target.value);
     };
 
-    // const listaFiltrada = filtro.trim() === ""
-    //     ? edificios
-    //     : edificios.filter((edificio) =>
-    //         edificio.name.toLowerCase().includes(filtro.toLowerCase())
-    //     );
+      const edificiosFiltrados = edificios.filter((edificio) =>
+        edificio.name.toLowerCase().includes(filtro.toLowerCase())
+    );
+
 
 
     const handleDelete = async (id: string) => {
@@ -100,8 +99,8 @@ const VistaEdificios = () => {
                 <ul className="overflow-y-auto scrollbar-hide">
                     {isLoading ? (
                         <div className="text-center py-4">Cargando...</div>
-                    ) : edificios.length > 0 ? (
-                        edificios.map((edificio) => (
+                    ) : edificiosFiltrados.length > 0 ? (
+                        edificiosFiltrados.map((edificio) => (
                             <ListaEdificio
                                 key={edificio.id}
                                 edificio={edificio}
@@ -109,7 +108,9 @@ const VistaEdificios = () => {
                             />
                         ))
                     ) : (
-                        <div className="text-center py-4">No hay edificios disponibles</div>
+                        <div className="text-center py-4">
+                            {filtro ? 'No se encontraron edificios con ese nombre' : 'No hay edificios disponibles'}
+                        </div>
                     )}
                 </ul>
             </section>
