@@ -1,5 +1,6 @@
 import Header from '../layout/Header'
 import { Outlet } from 'react-router-dom'
+import PageLoadingPage from './PageLoadingPage'
 
 const PagePrincipal = () => {
     return (
@@ -7,7 +8,9 @@ const PagePrincipal = () => {
             <Header/>
     
             <main className='mt-22'>
-                <Outlet/>
+                <PageLoadingPage/>   
+                {/* <PagePrincipal/> */}
+                {/* <Outlet/> */}
             </main>
     
         </>

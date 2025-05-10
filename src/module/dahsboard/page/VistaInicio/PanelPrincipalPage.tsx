@@ -1,12 +1,10 @@
-import CardsDashboard from '../../Components/Dashboard/CardsDashboard';
+import CardsDashboard from '../../components/componentesVistaInicio/CardsDashboard';
 import ventilador from '../../../../../public/Ventilador.png'
-import GraficoEstadistico from '../../Components/Dashboard/GraficoEstadistico';
-import BarraEstadistico from '../../Components/Dashboard/BarraEstadistico';
-import CircularEstadistico from '../../Components/Dashboard/CirularEstadistico';
+import GraficoEstadistico from '../../components/componentesVistaInicio/GraficoEstadistico';
+import BarraEstadistico from '../../components/componentesVistaInicio/BarraEstadistico';
+import CircularEstadistico from '../../components/componentesVistaInicio/CirularEstadistico';
 
 const PanelPrincipalPage = () => {
-
-
 
   return (
     <div className="text-white">
@@ -75,6 +73,7 @@ const PanelPrincipalPage = () => {
         <div className='w-[60%] h-full '>
           <BarraEstadistico/>
         </div>
+
       </section>
     </div>
   );

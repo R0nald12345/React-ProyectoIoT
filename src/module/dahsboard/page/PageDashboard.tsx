@@ -3,7 +3,7 @@ import { RiAlignRight } from "react-icons/ri";
 import { IoMdClose } from "react-icons/io";
 import Sidebar from "../layout/Sidebar"
 import DashboardHeader from "../layout/DashboardHeader"
-import PanelPrincipalPage from "../../../presentation/dashboard/pages/PanelPrincipal/PanelPrincipalPage"
+import PanelPrincipalPage from "./VistaInicio/PanelPrincipalPage"
 import { useState, useEffect } from "react"
 import { SlMenu } from "react-icons/sl"
 import { IoCloseSharp } from "react-icons/io5"
