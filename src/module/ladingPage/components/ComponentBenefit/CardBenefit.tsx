@@ -5,8 +5,8 @@ interface Props {
   title: string;
   subTitle: string;
   bgColor:string;
-  colorTitle:string;
-  colorSubTitle:string
+  colorTitle?:string;
+  colorSubTitle?:string;
 }
 
 const CardBenefit = ({icono,title,subTitle,bgColor,colorTitle,colorSubTitle}:Props) => {

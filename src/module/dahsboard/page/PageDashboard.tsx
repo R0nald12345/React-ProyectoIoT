@@ -7,6 +7,7 @@ import PanelPrincipalPage from "./VistaInicio/PanelPrincipalPage"
 import { useState, useEffect } from "react"
 import { SlMenu } from "react-icons/sl"
 import { IoCloseSharp } from "react-icons/io5"
+import VistaEdificios from "./VistaEdificios/VistaEdificios";
 
 const VistaDashboard = () => {
   // Estado para controlar la visibilidad del sidebar
@@ -33,11 +34,12 @@ const VistaDashboard = () => {
 
 
       {/* Contenido principal - margen izquierdo solo en pantallas XL */}
-      <section className="bg-gray-100 col-span-5 overflow-y-auto h-full">
+      <section className="bg-gray-200 col-span-5 overflow-y-auto h-full">
         {/* Header con botón de menú en pantallas pequeñas */}
         <DashboardHeader />
         <main className="p-5">
-          <PanelPrincipalPage />
+          {/* <PanelPrincipalPage /> */}
+          <VistaEdificios/>
 
         </main>
         
