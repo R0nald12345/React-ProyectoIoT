@@ -1,4 +1,6 @@
 
+import { BrowserRouter } from "react-router-dom"
+import VistaDashboard from "./module/dahsboard/page/PageDashboard"
 import IndexRoutes from "./routes"
 
 function App() {
@@ -7,7 +9,11 @@ function App() {
     <>
 
 
-      <IndexRoutes/>
+      {/* <IndexRoutes/> */}
+      <BrowserRouter>
+        <VistaDashboard/>
+      </BrowserRouter>
+
 
       
 
