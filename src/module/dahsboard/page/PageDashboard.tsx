@@ -3,13 +3,13 @@ import { RiAlignRight } from "react-icons/ri";
 import { IoMdClose } from "react-icons/io";
 import Sidebar from "../layout/Sidebar"
 import DashboardHeader from "../layout/DashboardHeader"
-import PanelPrincipalPage from "./VistaInicio/PanelPrincipalPage"
+import PanelPrincipalPage from "./pageDashboard/PanelPrincipalPage"
 import { useState, useEffect } from "react"
 import { SlMenu } from "react-icons/sl"
 import { IoCloseSharp } from "react-icons/io5"
 import VistaEdificios from "./VistaEdificios/VistaEdificios";
 
-const VistaDashboard = () => {
+const PageDashboard = () => {
   // Estado para controlar la visibilidad del sidebar
   const [sidebar, setSidebar] = useState(false);
 
@@ -54,4 +54,4 @@ const VistaDashboard = () => {
   )
 }
 
-export default VistaDashboard
+export default PageDashboard

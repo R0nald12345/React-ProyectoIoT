@@ -3,6 +3,7 @@ import ventilador from '../../../../../public/Ventilador.png'
 import GraficoEstadistico from '../../components/componentesVistaInicio/GraficoEstadistico';
 import BarraEstadistico from '../../components/componentesVistaInicio/BarraEstadistico';
 import CircularEstadistico from '../../components/componentesVistaInicio/CirularEstadistico';
+import GraficaLinea from '../../components/componentesPageInicio/GraficaLinea';
 
 const PanelPrincipalPage = () => {
 
@@ -14,7 +15,9 @@ const PanelPrincipalPage = () => {
 
         <section className='w-[60%]'>
 
-          <div className='flex justify-evenly gap-5'>
+          <GraficaLinea/>
+
+          {/* <div className='flex justify-evenly gap-5'>
             <CardsDashboard
               title1="Fans"
               numberTitle1={27}
@@ -49,7 +52,8 @@ const PanelPrincipalPage = () => {
             />
 
 
-          </div>
+          </div> */}
+
 
       
         </section>
