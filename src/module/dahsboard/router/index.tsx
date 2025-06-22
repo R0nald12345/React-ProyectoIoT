@@ -1,10 +1,9 @@
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-import PageDashboard from "../page/PageDashboard";
 import DashboardLayout from "../page/pageDashboard/DashboardLayout";
 
 const VistaInicio     = lazy(() => import('../page/pageDashboard/PanelPrincipalPage'));   // si tienes una portada
-const VistaEdificio   = lazy(() => import('../page/VistaEdificios/VistaEdificios'));
+const VistaEdificio   = lazy(() => import('../components/componentesVistaEdificio/VistaEdificios'));
 
 const Loading = () => <div>Loading...</div>;
 
@@ -29,9 +28,10 @@ const DashboardRoutes = () => (
           }
         />
 
+
       {/* hija  →  /dashboard/postulantes */}
       <Route
-        path="Edificio"
+        path="edificio"
         element={
           <Suspense fallback={<Loading />}>
             <VistaEdificio/>

@@ -14,8 +14,8 @@ const Sidebar = () => {
   const pathname = location.pathname;  
 
   const menuItems = [
-    { icon: MdDashboard, text: "Dashboard", path: "" },
-    { icon: FaPeopleGroup, text: "Postulantes", path: "postulantes" },
+    { icon: MdDashboard, text: "Inicio", path: "" },
+    { icon: FaPeopleGroup, text: "edificio", path: "edificio" },
     { icon: IoPeople, text: "Estudiantes", path: "/dashboard/estudiantes" },
     { icon: FaChalkboardTeacher, text: "Docentes", path: "/dashboard/docentes" },
     { icon: FaSheetPlastic, text: "Papeleta", path: "/dashboard/papeleta" }

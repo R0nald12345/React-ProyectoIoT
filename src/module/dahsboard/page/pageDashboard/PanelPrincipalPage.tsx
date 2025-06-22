@@ -1,8 +1,8 @@
-import CardsDashboard from '../../components/componentesVistaInicio/CardsDashboard';
+import CardsDashboard from '../../components/componentesPageInicio/CardsDashboard';
 import ventilador from '../../../../../public/Ventilador.png'
-import GraficoEstadistico from '../../components/componentesVistaInicio/GraficoEstadistico';
-import BarraEstadistico from '../../components/componentesVistaInicio/BarraEstadistico';
-import CircularEstadistico from '../../components/componentesVistaInicio/CirularEstadistico';
+import GraficoEstadistico from '../../components/componentesPageInicio/GraficoEstadistico';
+import BarraEstadistico from '../../components/componentesPageInicio/BarraEstadistico';
+import CircularEstadistico from '../../components/componentesPageInicio/CirularEstadistico';
 import GraficaLinea from '../../components/componentesPageInicio/GraficaLinea';
 
 const PanelPrincipalPage = () => {

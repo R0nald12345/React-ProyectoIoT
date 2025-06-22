@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Swal from "sweetalert2";
-import { edificioService } from "../../service/ServiceEdificios/edificioService";
-import { CreateBuildingDTO } from "../../types/create.edificio";
+import { edificioService } from "../../../service/ServiceEdificios/edificioService";
+import { CreateBuildingDTO } from "../../../types/create.edificio";
 
 interface Props {
     open: boolean;

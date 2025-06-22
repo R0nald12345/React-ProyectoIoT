@@ -2,15 +2,18 @@ import { useState, useEffect } from "react";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { edificioService } from "../../service/ServiceEdificios/edificioService";
 import { Building } from "../../types/edificio.types";
-import ListaEdificio from "../../components/ListaEdificio/ListaEdificio";
-import ModalCrearEdificio from "../../components/ModalVistaEdificios/ModalCrearEdificio";
+import ListaEdificio from "../ListaEdificio/ListaEdificio";
+import ModalCrearEdificio from "./ModalVistaEdificios/ModalCrearEdificio";
+import ModalVerEdificio from "./ModalVistaEdificios/ModalVerEdificio";
 
 const VistaEdificios = () => {
+    
     const [filtro, setFiltro] = useState("");
     const [edificios, setEdificios] = useState<Building[]>([]);
     const [isLoading, setIsLoading] = useState(false);
 
     const [openModal, setOpenModal] = useState(false);
+
 
     const obtenerEdificios = async () => {
         try {
@@ -59,6 +62,8 @@ const VistaEdificios = () => {
                 onClose={() => setOpenModal(false)}
                 onEdificioCreated={obtenerEdificios}
             />
+
+
             <section className="flex justify-between w-[90%] mx-auto ">
                 <button
                     className="w-[10%] bg-gray-500 hover:bg-gray-600 text-white rounded-lg py-3"
