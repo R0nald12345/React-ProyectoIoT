@@ -1,9 +1,7 @@
 import { createContext, ReactNode, useContext, useState } from "react";
-
-// import { AuthResponse, RegisterPayload, LoginPayload, User } from "../types/auth.types";
+import { AuthResponse, LoginPayload, RegisterPayload, User } from "../types/auth.types";
 import Swal from "sweetalert2";
 import { authService } from "../service/authService";
-import { AuthResponse, LoginPayload, RegisterPayload, User } from "../types/auth.types";
 
 interface AuthContextType {
     user: User | null;
