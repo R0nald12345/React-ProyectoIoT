@@ -1,10 +1,7 @@
 import { lazy, Suspense } from "react"
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
 import PublicRoute from "./PublicRoute"
-import ProtectedRoute from "./ProtectedRoute"
 import { AuthProvider } from "../module/auth/hooks/useAuth"
-
-
 
 
 const LoadingFallback = () => <div>Cargando....</div>

@@ -1,10 +1,9 @@
-
 import imagenioT from '../../../img/imagenIoT.png'
-// import { Contacto } from '../components/ComponentContact/Contacto'
 import ComponentBenefit from '../components/ComponentBenefit/ComponentBenefit'
 import Contacto from '../components/ComponentContact/Contacto'
 import ComponentService from '../components/ComponentServices/ComponentService'
 import ComponentSolution from '../components/ComponentSolution/ComponentSolution'
+import ComponentPlanes from '../components/ComponentPlanes/ComponentPlanes'
 
 const PageLoadingPage = () => {
     return (
@@ -70,6 +69,10 @@ const PageLoadingPage = () => {
 
             <div>
                 <ComponentSolution />
+            </div>
+
+            <div>
+                <ComponentPlanes />
             </div>
 
             {/* Sección de contacto con margen superior claro */}

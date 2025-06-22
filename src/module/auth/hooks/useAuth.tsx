@@ -3,6 +3,7 @@ import { createContext, ReactNode, useContext, useState } from "react";
 // import { AuthResponse, RegisterPayload, LoginPayload, User } from "../types/auth.types";
 import Swal from "sweetalert2";
 import { authService } from "../service/authService";
+import { AuthResponse, LoginPayload, RegisterPayload, User } from "../types/auth.types";
 
 interface AuthContextType {
     user: User | null;
@@ -25,25 +26,27 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
             setIsLoading(true);
             const response: AuthResponse = await authService.login(payload);
 
-            // Simulación de respuesta
-            // const response: AuthResponse = { ... };
-
-            if (response && response.user) {
+            if (response && response.success) {
                 localStorage.setItem('token', response.token);
-                localStorage.setItem('userName', response.user.nombre);
-                setUser(response.user);
+                localStorage.setItem('nombre', response.data.nombre_completo);
+                localStorage.setItem('rol', response.data.rol);
+                setUser(response.data);
 
                 Swal.fire({
                     icon: 'success',
                     title: '¡Bienvenido!',
-                    text: `Has iniciado sesión como ${response.user.nombre}`,
+                    text: `Has iniciado sesión como ${response.data.nombre_completo}`,
                 });
+            } else {
+                // Si success es false, lanzamos un error para que sea capturado por el catch
+                throw new Error(response.message || "Credenciales incorrectas");
             }
         } catch (error) {
+            const errorMessage = error instanceof Error ? error.message : "Credenciales Incorrectos o Vacías!";
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
-                text: "Credenciales Incorrectos o Vacías!",
+                text: errorMessage,
             });
             throw error;
         } finally {
@@ -75,7 +78,8 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     const logout = () => {
         setUser(null);
         localStorage.removeItem('token');
-        localStorage.removeItem('userName');
+        localStorage.removeItem('nombre');
+        localStorage.removeItem('rol');
     };
 
   return (

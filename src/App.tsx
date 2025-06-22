@@ -1,27 +1,18 @@
 
 import IndexRoutes from "./routes"
-
+import JsxRenderer from "./module/dahsboard/page/pageDatosSimulador/ResultadoSimulador"
 
 function App() {
 
   return (
     <>
 
-
-      {/* <IndexRoutes/> */}
-      {/* <BrowserRouter>
-        {/* <VistaDashboard/> */}
       
-        {/* <PageLoadingPage/> */}
+        {/*<IndexRoutes/>*/}
 
-        {/* <PagePrincipal/> */}
-      {/* </BrowserRouter>  */}
-        {/* <PageLogin/> */}
-      
-        <IndexRoutes/>
+        <JsxRenderer/>
 
-        {/* <PagePlanes/> */}
-        {/* <PageDashboard/> */}
+   
         
     </>
   )

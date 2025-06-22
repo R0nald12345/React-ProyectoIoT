@@ -45,30 +45,7 @@ const PageLogin = () => {
           backgroundImage: `url(${imgenFondo})`
         }}
       >
-        {/* <header className=" flex justify-between p-5">
-          <img
-            // src={uagrm_logo}
-            alt="Logo UAGRM"
-            width={80}
-            height={100}
-          />
-          <section className="flex gap-5 ">
-            <img
-            //   src={logo_facebook}
-              className="rounded-xl"
-              alt="Logo UAGRM"
-              width={50}
-              height={50}
-            />
-            <img
-            //   src={logo_whatApps}
-              className="rounded-xl"
-              alt="Logo UAGRM"
-              width={50}
-              height={50}
-            />
-          </section>
-        </header> */}
+
 
         <section className="flex items-center justify-center min-h-screen">
             {/* Contenido del formulario */}
