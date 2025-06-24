@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react"
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
 import PublicRoute from "./PublicRoute"
 import { AuthProvider } from "../module/auth/hooks/useAuth"
+import PageServicio from "../module/ladingPage/page/PageServicio"
 
 
 const LoadingFallback = () => <div>Cargando....</div>
@@ -24,6 +25,9 @@ const IndexRoutes = () => {
 
               {/* <Route path="/auth/" element={<h1>InicioLogin</h1>} /> */}
               <Route index element={<ModuleLadingPage />} />
+
+              <Route path="/servicio/:id" element={<PageServicio/>}/>
+
               <Route path="/auth/*" element={<ModuleAut />} />
 
 

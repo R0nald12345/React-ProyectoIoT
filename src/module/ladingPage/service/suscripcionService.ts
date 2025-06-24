@@ -20,6 +20,18 @@ const suscripcionService = {
             throw error;
         }
     },
+    
+    getSuscripcionById: async (id: number): Promise<Plan> => {
+        try {
+            const response = await axios.get<Plan>(`${API_URL}/suscripcion/${id}`);
+            return response.data;
+        } catch (error) {
+            console.error(`Error al obtener la suscripción con ID ${id}:`, error);
+            throw error;
+        }
+    },
+    
 };
+
 
 export default suscripcionService; 

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Swal from "sweetalert2";
 import { edificioService } from "../../../service/ServiceEdificios/edificioService";
-import { CreateBuildingDTO } from "../../../types/create.edificio";
+import { CreateBuildingDTO } from "../../../types/create.edificio.ts";
 
 interface Props {
     open: boolean;
@@ -12,18 +12,16 @@ interface Props {
 const ModalCrearEdificio = ({ open, onClose, onEdificioCreated }: Props) => {
     const [isLoading, setIsLoading] = useState(false);
     const [nombre, setNombre] = useState("");
-    const [tipo, setTipo] = useState<"residential" | "commercial">("residential");
-    const [numeroPiso, setNumeroPiso] = useState(0);
-    const [numeroHabitacion, setNumeroHabitacion] = useState(0);
+    const [address, setAddress] = useState("");
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         
-        if (!nombre.trim()) {
+        if (!nombre.trim() || !address.trim()) {
             Swal.fire({
                 icon: 'error',
                 title: 'Error',
-                text: 'El nombre del edificio es obligatorio',
+                text: 'El nombre y la dirección del edificio son obligatorios',
             });
             return;
         }
@@ -33,26 +31,12 @@ const ModalCrearEdificio = ({ open, onClose, onEdificioCreated }: Props) => {
 
             const nuevoEdificio :CreateBuildingDTO = {
                 name: nombre,
-                type: tipo,
-                floors: [
-                    {
-                        number: numeroPiso,
-                        rooms: [
-                            {
-                                number: numeroHabitacion,
-                                devices: [
-                                    {
-                                        id: "device-" + Date.now(),
-                                        type: "power_meter",
-                                        status: "active",
-                                        model: "PM-2000",
-                                        update_interval: 10
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
+                address: address,
+                geolocation: {
+                    additionalProp1: 0,
+                    additionalProp2: 0,
+                    additionalProp3: 0
+                }
             };
 
             await edificioService.createBuilding(nuevoEdificio);
@@ -65,9 +49,7 @@ const ModalCrearEdificio = ({ open, onClose, onEdificioCreated }: Props) => {
 
             // Limpiar formulario y cerrar modal
             setNombre("");
-            setTipo("residential");
-            setNumeroPiso(0);
-            setNumeroHabitacion(0);
+            setAddress("");
             onClose();
             onEdificioCreated?.();
 
@@ -114,38 +96,12 @@ const ModalCrearEdificio = ({ open, onClose, onEdificioCreated }: Props) => {
                     </div>
 
                     <div>
-                        <h3 className="font-semibold mt-2">Tipo de Edificio</h3>
-                        <select
-                            className="rounded-md border-2 border-gray-400 w-full p-2 mt-1 outline-none"
-                            value={tipo}
-                            onChange={(e) => setTipo(e.target.value as "residential" | "commercial")}
-                            disabled={isLoading}
-                        >
-                            <option value="residential">Residencial</option>
-                            <option value="commercial">Comercial</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <h3 className="font-semibold mt-2">Número de Piso</h3>
+                        <h3 className="font-semibold mt-2">Dirección del Edificio</h3>
                         <input
                             className="rounded-md border-2 border-gray-400 w-full p-2 mt-1 outline-none"
-                            type="number"
-                            min="0"
-                            value={numeroPiso}
-                            onChange={(e) => setNumeroPiso(Number(e.target.value))}
-                            disabled={isLoading}
-                        />
-                    </div>
-
-                    <div>
-                        <h3 className="font-semibold mt-2">Número de Habitación</h3>
-                        <input
-                            className="rounded-md border-2 border-gray-400 w-full p-2 mt-1 outline-none"
-                            type="number"
-                            min="0"
-                            value={numeroHabitacion}
-                            onChange={(e) => setNumeroHabitacion(Number(e.target.value))}
+                            type="text"
+                            value={address}
+                            onChange={(e) => setAddress(e.target.value)}
                             disabled={isLoading}
                         />
                     </div>

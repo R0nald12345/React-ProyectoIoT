@@ -7,19 +7,41 @@ import { FaPeopleGroup } from "react-icons/fa6";
 import { MdDashboard } from "react-icons/md";
 import { FaSheetPlastic } from "react-icons/fa6";
 import { Link, useLocation } from "react-router-dom";
+import { useUsuarioStore } from "../../../../store/useUsuarioStore";
 
 const Sidebar = () => {
   const [sidebar, setSidebar] = useState(false);
   const location = useLocation();         
   const pathname = location.pathname;  
 
+  const {usuario} = useUsuarioStore();
+  
+
   const menuItems = [
     { icon: MdDashboard, text: "Inicio", path: "" },
     { icon: FaPeopleGroup, text: "edificio", path: "edificio" },
-    { icon: IoPeople, text: "Estudiantes", path: "/dashboard/estudiantes" },
-    { icon: FaChalkboardTeacher, text: "Docentes", path: "/dashboard/docentes" },
-    { icon: FaSheetPlastic, text: "Papeleta", path: "/dashboard/papeleta" }
+    { icon: IoPeople, text: "Rol", path: "/dashboard/estudiantes" },
+    { icon: FaChalkboardTeacher, text: "Usuario", path: "/dashboard/docentes" },
+    { icon: FaSheetPlastic, text: "Perfil", path: "/dashboard/papeleta" }
+
   ];
+
+  //SuperAdmin
+  const menuItems2 = [
+    { icon: MdDashboard, text: "Inicio", path: "" },
+    { icon: FaPeopleGroup, text: "Usuario", path: "edificio" },
+    { icon: IoPeople, text: "Suscripciones", path: "/dashboard/estudiantes" },
+    { icon: FaChalkboardTeacher, text: "Perfil", path: "/dashboard/docentes" },
+  ];
+
+
+  let itemsToShow = menuItems; // Por defecto
+
+if (usuario?.cliente_id === 2) {
+  itemsToShow = menuItems2;
+} else if (usuario?.cliente_id === null) {
+  itemsToShow = menuItems;
+}
 
   return (
     <>
@@ -36,7 +58,7 @@ const Sidebar = () => {
         {/* Menu */}
         <nav className="flex-1 py-4">
           <ul className="space-y-2">
-            {menuItems.map((item, index) => {
+            {itemsToShow.map((item, index) => {
               const Icon = item.icon;
               const isActive =
                 (item.path === "" && pathname === "/dashboard") ||

@@ -19,10 +19,27 @@ export interface User {
     activo:           boolean;
 }
 
-// Puedes mantener o definir RegisterPayload si lo necesitas para el registro
 export interface RegisterPayload {
     nombre_completo: string;
     email:           string;
-    password:        string;
-    cliente_id?:     number; 
+    password_hash:   string;
+    rol_id?:         number;
+    cliente_id?:     number;
+    activo?:         boolean;
+}
+
+export interface RegisterResponse {
+    message: string;
+    usuario: {
+        id: number;
+        nombre_completo: string;
+        email: string;
+        password_hash: string;
+        rol_id: number;
+        cliente_id: number;
+        activo: boolean;
+        rol: {
+            nombre_rol: string;
+        };
+    };
 }

@@ -1,15 +1,23 @@
-export interface Building {
-    id: string;
-    name: string;
-    type: BuildingType;
-    floors: Floor[];
-    devices_count: number;
+export interface Geolocation {
+    additionalProp1: number;
+    additionalProp2: number;
+    additionalProp3: number;
 }
 
 export interface CreateBuildingDTO {
     name: string;
-    type: BuildingType;
-    floors: Floor[];
+    address: string;
+    geolocation: Geolocation;
+}
+
+export interface Building {
+    id: string;
+    name: string;
+    address: string;
+    geolocation: Geolocation;
+    is_simulating: boolean;
+    created_at: string;
+    updated_at: string;
 }
 
 export type BuildingType = "residential" | "commercial" | "office";

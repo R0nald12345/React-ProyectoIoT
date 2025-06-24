@@ -2,6 +2,7 @@ import { createContext, ReactNode, useContext, useState } from "react";
 import { AuthResponse, LoginPayload, RegisterPayload, User } from "../types/auth.types";
 import Swal from "sweetalert2";
 import { authService } from "../service/authService";
+import { useUsuarioStore } from "../../../store/useUsuarioStore";
 
 interface AuthContextType {
     user: User | null;
@@ -12,6 +13,7 @@ interface AuthContextType {
     logout: () => void;
 }
 
+
 const AuthContext = createContext<AuthContextType | null>(null);
 
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
@@ -19,16 +21,27 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     const [user, setUser] = useState<User | null>(null);
     const [isLoading, setIsLoading] = useState(false);
 
+    const { setUsuario } = useUsuarioStore();
+
+
     const login = async (payload: LoginPayload) => {
         try {
             setIsLoading(true);
             const response: AuthResponse = await authService.login(payload);
+
+            console.log('Response: ', response);
 
             if (response && response.success) {
                 localStorage.setItem('token', response.token);
                 localStorage.setItem('nombre', response.data.nombre_completo);
                 localStorage.setItem('rol', response.data.rol);
                 setUser(response.data);
+
+                 // Guarda en Zustand solo el objeto usuario
+                 setUsuario({
+                    ...response.data,
+                    cliente_id: response.data.cliente_id ?? 0 // or any default number you prefer
+                  });
 
                 Swal.fire({
                     icon: 'success',

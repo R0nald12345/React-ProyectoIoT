@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { AuthResponse, LoginPayload, RegisterPayload } from '../types/auth.types';
+import { AuthResponse, LoginPayload, RegisterPayload, RegisterResponse } from '../types/auth.types';
 
 //Me creo  una instancia de Axios con la URL base
 const API_URL = import.meta.env.VITE_API_BACK;
@@ -25,12 +25,9 @@ export const authService = {
         }
     },
   
-    register: async (userData: RegisterPayload) => {
+    register: async (userData: RegisterPayload): Promise<RegisterResponse> => {
         try {
-            const response = await axios.post<AuthResponse>(`${API_URL}/auth/register`, userData);
-            if (response.data.token) {
-                localStorage.setItem('token', response.data.token);
-            }
+            const response = await axios.post<RegisterResponse>(`${API_URL}/usuario`, userData);
             return response.data;
         } catch (error) {
             console.error("Error en el servicio de registro:", error);
@@ -45,10 +42,4 @@ export const authService = {
       localStorage.removeItem('token');
     },
   
-    // private handleError(error: any): Error {
-    //   if (axios.isAxiosError(error)) {
-    //     return new Error(error.response?.data?.message || 'Error en la autenticación');
-    //   }
-    //   return new Error('Error inesperado');
-    // }
   };

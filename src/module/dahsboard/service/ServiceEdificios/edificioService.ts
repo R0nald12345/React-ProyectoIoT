@@ -1,6 +1,5 @@
 import axios from "axios";
-import { Building } from "../../types/edificio.types";
-import { CreateBuildingDTO } from "../../types/create.edificio.ts";
+import { Building, CreateBuildingDTO } from "../../types/create.edificio.ts";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -23,9 +22,9 @@ export const edificioService = {
     },
 
     // Método para obtener todos los edificios
-    getAllBuildings: async () => {
+    getAllBuildings: async (): Promise<Building[]> => {
         try {
-            const response = await axios.get(`${API_URL}/buildings`);
+            const response = await axios.get<Building[]>(`${API_URL}/buildings`);
             console.log(response.data)
             return response.data;
         } catch (error) {
